@@ -50,6 +50,6 @@ Run tests locally with virtualenv active:
 
 ::
 
-    $ PYTHONPATH=./core && python -m unittest discover tests/
+    (env) $ PYTHONPATH=./core && python -m unittest discover tests/
 
 .. _virtualenv: https://virtualenv.pypa.io/en/latest/
