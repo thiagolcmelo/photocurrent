@@ -43,26 +43,13 @@ After that, clone the repository and install it:
     (env) $ cd photocurrent
     (env) $ pip install .
 
-An option to the last line is:
-
-::
-
-    (env) $ make install
-
-
 Running Tests
 -------------
 
-Run tests locally using ``make`` if virtualenv is active:
+Run tests locally with virtualenv active:
 
 ::
 
-    $ make
-
-If virtualenv isn't active then use
-
-::
-
-    $ pipenv run make
+    $ PYTHONPATH=./core && python -m unittest discover tests/
 
 .. _virtualenv: https://virtualenv.pypa.io/en/latest/
