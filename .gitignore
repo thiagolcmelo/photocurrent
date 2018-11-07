@@ -105,3 +105,6 @@ venv.bak/
 
 # visual studio code
 .vscode/*
+
+# cloud 9
+.c9/*
