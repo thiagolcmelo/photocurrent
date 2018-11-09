@@ -1,5 +1,5 @@
 from webapp import app, bcrypt, db
-from flask import render_template, redirect, url_for, session, request
+from flask import render_template, redirect, url_for, session, request, flash
 from author.form import RegisterForm, LoginForm
 from author.models import Author
 from author.decorators import login_required
@@ -20,6 +20,7 @@ def login():
             if bcrypt.check_password_hash(author.password, form.password.data):
                 session['username'] = form.username.data
                 session['is_author'] = author.is_author
+                flash('User %s logged in' % author.username)
                 if 'next' in session:
                     next = session['next']
                     session.pop('next')
@@ -44,4 +45,5 @@ def register():
 def logout():
     session.pop('username')
     session.pop('is_author')
+    flash("User logged out")
     return redirect(url_for('index'))
